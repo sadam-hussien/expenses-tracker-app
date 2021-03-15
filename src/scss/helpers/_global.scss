@@ -1,0 +1,33 @@
+body {
+    font-family: $main-font-name;
+    font-size: $main-font-size;
+    background: $bg;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.padding-section {
+    padding-top: $large;
+    padding-bottom: $large;
+}
+
+input, button, select, textarea {
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+article.the-content {
+    @media (max-width: 767px) {
+        width: 100vw !important;
+        margin-bottom: $large;
+    }
+}

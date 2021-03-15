@@ -1,0 +1,91 @@
+@import "../../../../scss/variables/allVar";
+
+.history-item {
+    background: $bg-el;
+    padding: $medium;
+    box-shadow: 0 0 10px rgba($text-color-sub, .1);
+    border-radius: 10px;
+    @media (min-width: 991px) {
+        height: 100%;
+    }
+    @media (max-width: 991px) {
+        margin-bottom: $medium;
+    }
+
+    // start history-item-title
+    .history-item-title {
+        margin-bottom: $medium;
+        padding-bottom: $medium;
+        border-bottom: 1px solid rgba($text-color-sub, .1);
+
+        .text {
+            color: $text-color-sub;
+            letter-spacing: 1px;
+        }
+    }
+    //=== end history-item-title
+
+    // start history-item-box
+    .history-item-box {
+        margin-bottom: 0;
+
+        li {
+            &:not(:last-of-type) {
+                margin-bottom: $small;
+                border-bottom: 1px solid rgba($text-color-sub, .1);
+                padding-bottom: $small;
+            }
+
+            .single-item-title {
+                text-transform: capitalize;
+
+                span {
+                    $si: 26px;
+                    width: $si;
+                    height: $si;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    margin-right: $small;
+                    // opacity: .5;
+                    .icon {
+                    }
+                }
+            }
+
+            .single-item-details {
+                display: flex;
+                align-items: center;
+
+                .amount {
+                    font-size: 1rem;
+
+                    &.expenses-color {
+                        color: $expenses-color;
+                    }
+
+                    &.income-color {
+                        color: $income-color;
+                    }
+                }
+
+                .delete {
+                    padding: 0;
+                    background: transparent;
+                    border: none;
+                    margin-left: $small;
+                    .icon {
+                        fill: $text-color-sub;
+                    }
+                }
+
+            }
+        }
+    }
+    // ==== end history-item-box
+
+}

@@ -1,0 +1,75 @@
+@import "../../scss/variables/allVar";
+
+@import "../../scss/variables/allVar";
+
+.add-transaction {
+
+    .add-transaction-content {
+        form {
+            width: 100%;
+            .form-group {
+                margin-bottom: $medium;
+                width: 100%;
+            }
+
+            label {
+                margin-bottom: 0;
+                display: block;
+                font-size: 1.1rem;
+            }
+
+            input {
+                height: 45px;
+                width: 100%;
+                margin-top: $small;
+                padding: 0 $medium;
+                border-radius: 0;
+                background: $bg-el;
+                border: none;
+                color: $main-color;
+                box-shadow: 0 0 10px rgba($text-color-sub, .1);
+                transition: all .5s;
+                &:focus {
+                    background: $main-color !important;
+                    color: $white;
+
+                    &::placeholder {
+                        color: rgba($white, .8);
+                    }
+                }
+
+                &::placeholder {
+                    font-size: .9rem;
+                    color: $text-color-sub;
+                }
+            }
+
+            .amount-note {
+                margin-bottom: $small;
+                color: $text-color-sub;
+                font-size: .8rem;
+            }
+
+            .add-transaction-submit {
+                button {
+                    border-radius: 45px;
+                    height: 45px;
+                    background: $main-color;
+                    color: $white;
+                    border: 1px solid $main-color;
+                    min-width: 120px;
+                    padding: 0 $medium;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .5s;
+                    &:hover {
+                        background: transparent;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+    
+}

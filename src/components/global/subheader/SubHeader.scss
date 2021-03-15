@@ -1,0 +1,23 @@
+@import "../../../scss/variables/allVar";
+
+// start hello
+.hello {
+    padding-top: $medium;
+    margin-bottom: $large;
+
+    .text {
+        @media (max-width: 450px) {
+            font-size: 1.3rem;
+        }
+    }
+
+    .date { 
+        padding: 3px $small;
+        background: $main-color;
+        color: $white;
+        font-size: .9rem;
+        border-radius: 25px;
+        box-shadow: 0 0 10px rgba($text-color-sub, .2);
+    }
+}
+// ==== end hello

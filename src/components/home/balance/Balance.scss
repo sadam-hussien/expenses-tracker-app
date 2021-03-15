@@ -1,0 +1,118 @@
+@import "../../../scss/variables/allVar";
+
+.balance {
+    margin-bottom: $large;
+
+    // start hello
+    .hello {
+        margin-bottom: $large;
+        .date { 
+            padding: 3px $small;
+            background: $main-color;
+            color: $white;
+            font-size: .9rem;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba($text-color-sub, .2);
+        }
+    }
+    // ==== end hello
+
+    // start balance-items
+    .balance-items {
+        height: 100%;
+
+        // start balance-box
+        .balance-box {
+            background: $main-color;
+            box-shadow: 0 0 10px rgba($text-color-sub, .1);
+            padding: $small $large;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+
+            @media (min-width: 992px) {
+                height: 100%;
+            }
+
+            @media (max-width: 991px) {
+                min-height: 130px;
+            }
+
+            .income, .expenses {
+                flex-grow: 1;
+            }
+
+
+            #balance-chart {
+                margin-left: -35px;
+            }
+
+            .text {
+                color: rgba($white, .85);
+                margin-bottom: $small;
+                letter-spacing: 1px;
+
+                @media (max-width: 400px) {
+                    font-size: .9rem;
+                }
+            }
+
+            .amount {
+                color: $white;
+                margin-bottom: 0;
+                letter-spacing: 4px;
+                @media (max-width: 400px) {
+                    font-size: 1.3rem;
+                }
+            }
+            
+        }
+        // ==== end balance-box
+
+        .balance-box-details {
+            $size: 12px;
+            flex-grow: 1;
+            gap: $medium;
+            background: $bg-el;
+            padding: $small $medium;
+            @media (max-width: 991px) {
+                margin-top: $medium;
+            }
+
+            @media (max-width: 450px) {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+
+            > div {
+                flex-grow: 1;
+            }
+
+            .income {
+                border-right: 2px solid rgba($text-color-sub, .1);
+                @media (max-width: 450px) {
+                    border-right: none;
+                    border-bottom: 1px solid rgba($text-color-sub, .1);
+                    padding-bottom: $medium;
+                    margin-bottom: $medium;
+                }
+            }
+
+            .income, .expenses {
+                @media (max-width: 576px) {
+                    .amount {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+        }
+
+    }
+    // ==== ebd balance-items
+
+    #balance-chart {
+        
+    }
+
+}

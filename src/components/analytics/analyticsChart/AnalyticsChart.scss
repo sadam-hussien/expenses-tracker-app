@@ -1,0 +1,48 @@
+@import "../../../scss/variables/allVar";
+
+.analytics-chart {
+    margin-bottom: $large;
+
+    .analytics-content {
+
+        .chart-item {
+            padding: $medium;
+            background: $bg-el;
+            box-shadow: 0 0 10px rgba($text-color-sub, .1);
+            border-radius: 5px;
+        }
+
+        .trackers {
+            display: flex;
+            flex-direction: column;
+            gap: $medium;
+
+            @media (min-width: 991px) {
+                height: 100%;
+            }
+            
+            @media (max-width: 991px) {
+                margin-top: $medium;
+            }
+
+            @media (min-width: 400px) and (max-width: 991px) {
+                flex-direction: row;
+            }
+
+            .tracker-item {
+                $size: 12px;
+                padding: $medium;
+                box-shadow: 0 0 10px rgba($text-color-sub, .1);
+                background: $bg-el;
+                flex-grow: 1;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+
+            }
+        }
+
+    }
+}

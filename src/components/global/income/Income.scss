@@ -1,0 +1,37 @@
+@import "../../../scss/variables/allVar";
+
+.income {
+    $size: 12px;
+    
+    // border-right: 2px solid rgba($text-color-sub, .1);
+    .title-balance-box {
+        margin-bottom: $small;
+
+        .title-balance-box-inner {
+            margin: 0;
+        }
+    }
+
+    .amount {
+        margin-bottom: 0;
+        letter-spacing: 4px;
+        margin-left: $size;
+        color: $income-color !important;
+        @media (max-width: 576px) {
+            font-size: 1.5rem;
+        }
+        @media (max-width: 400px) {
+            font-size: 1.3rem;
+        }
+    }
+
+    .shape {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        margin-right: $small;
+        background: $income-color;
+
+    }
+
+}

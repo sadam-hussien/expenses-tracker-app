@@ -1,24 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+
+import {GlobalProvider} from "./context/GlobalContext";
+
+// header
+import Header from "./components/global/header/Header";
+
+// home
+import Home from "./views/home/Home";
+
+// analytics
+import Analytics from "./views/analytics/Analytics";
+
+// add new transaction
+import AddTransaction from "./views/addTransaction/AddTransaction";
+
+// not found page
+import NotFound from "./views/notfound/NotFound";
+
+const App = () => {
+
+  const [headerWidth, setHeaderWidth] = useState(null);
+
+  // handle the content width based on the sidebar(header)
+  const handleHeaderWidth = (value) => {
+
+    setHeaderWidth(document.documentElement.offsetWidth - value);
+
+    window.addEventListener("resize", function () {
+
+      setHeaderWidth(document.documentElement.offsetWidth - value);
+
+    });
+
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <div className="App d-flex justify-content-end">
+
+        <Header theWidth={handleHeaderWidth} />
+
+        <GlobalProvider>
+          <article className="the-content" style={{width: headerWidth}}>
+
+            <Switch>
+
+              {/* home  */}
+              <Route path="/" exact component={Home} />
+
+              {/* analytice  */}
+              <Route path="/analytics" component={Analytics} />
+              
+              {/* addtransaction  */}
+              <Route path="/addtransaction" component={AddTransaction} />
+
+              {/* not found */}
+              <Route component={NotFound} />
+              
+            </Switch>
+
+          </article>
+        </GlobalProvider>
+
+      </div>
+
+    </BrowserRouter>
   );
 }
 

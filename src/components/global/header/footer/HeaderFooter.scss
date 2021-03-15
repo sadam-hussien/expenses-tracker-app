@@ -1,0 +1,16 @@
+@import "../../../../scss/variables/allVar";
+
+.header-footer {
+    padding: $medium $medium 0;
+    border-top: 1px solid rgba($text-color-sub, .1);
+    a {
+        letter-spacing: 1px;
+        font-size: .9rem;
+        color: $text-color-sub;
+
+        .icon {
+            fill: $main-color;
+            margin-right: $small;
+        }
+    }
+}

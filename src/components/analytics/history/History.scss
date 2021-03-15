@@ -1,0 +1,110 @@
+@import "../../../scss/variables/allVar";
+
+.analytics-history {
+    margin-bottom: $large;
+    .analytics-history-items {
+        ul {
+            max-height: 500px;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $medium;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $text-color-sub;
+                border-radius: 10px;
+                // height: 100px;
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: $main-color;
+            }
+
+            @media (max-width: 1125px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 991px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            // start history-item-box
+            .history-item-box {
+                padding: $small $medium;
+                background: $bg-el;
+                box-shadow: 0 0 10px rgba($text-color-sub, .1);
+                border-radius: 5px;
+
+                .single-item-title {
+                    text-transform: capitalize;
+
+                    .text {
+                        font-size: .9rem;
+                    }
+    
+                    span {
+                        $si: 26px;
+                        width: $si;
+                        height: $si;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        margin-right: $small;
+                        // opacity: .5;
+                        .icon {
+                        }
+                    }
+                }
+    
+                .single-item-details {
+                    display: flex;
+                    align-items: center;
+    
+                    .amount {
+                        font-size: 1rem;
+                        white-space: nowrap;
+                        margin-left: $small;
+    
+                        &.expenses-color {
+                            color: $expenses-color;
+                        }
+    
+                        &.income-color {
+                            color: $income-color;
+                        }
+                    }
+    
+                    .delete {
+                        padding: 0;
+                        background: transparent;
+                        border: none;
+                        margin-left: $small;
+                        .icon {
+                            fill: $text-color-sub;
+                        }
+                    }
+    
+                }
+
+            }
+            // ===== end history-item-box
+
+        }
+    }
+}
